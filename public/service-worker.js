@@ -39,8 +39,8 @@ self.addEventListener("activate", (event) => {
 // Fetch event: Serve cached content, fallback to network if unavailable
 self.addEventListener("fetch", (event) => {
   if (event.request.url.includes("google-analytics.com")) {
-    // Exclude external services like Google Analytics from being cached
-    return;
+    // Just fetch directly without any caching logic
+    return fetch(event.request);
   }
 
   event.respondWith(
@@ -50,8 +50,9 @@ self.addEventListener("fetch", (event) => {
         // Serve cached response if available, otherwise fetch from network
         return response || fetch(event.request);
       })
-      .catch(() => {
+      .catch((error) => {
         // Fallback if both cache and network fail
+        console.error("Fetch failed; returning offline page instead.", error);
         if (event.request.mode === "navigate") {
           return caches.match("/index.html");
         }
