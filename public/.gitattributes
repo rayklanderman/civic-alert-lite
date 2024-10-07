@@ -1,1 +1,14 @@
+# Auto-detect text files and normalize line endings
 * text=auto
+
+# Ensure consistent LF line endings for YAML and shell script files
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+
+# Prevent binary files from being converted
+*.png binary
+*.jpg binary
+*.gif binary
+*.jpeg binary
+
