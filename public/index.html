@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Civic Alert Lite</title>
+
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Manifest file for PWA -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicon link -->
+    <link
+      rel="icon"
+      href="images/icon-192.png"
+      sizes="192x192"
+      type="image/png"
+    />
+
+    <!-- Meta tags for PWA -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="background-color" content="#ffffff" />
+
+    <!-- Firebase JS SDKs -->
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"
+    ></script>
+
+    <!-- Link to Firebase config and app script -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Civic Alert Lite</h1>
+      <button id="alertBtn" class="btn">Report Alert</button>
+      <ul id="alertList"></ul>
+    </div>
+
+    <!-- Register service worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then((reg) => console.log("Service Worker Registered!", reg))
+          .catch((err) =>
+            console.error("Service Worker registration failed: ", err)
+          );
+      }
+    </script>
+  </body>
+</html>
