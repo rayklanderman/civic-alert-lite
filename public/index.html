@@ -40,8 +40,44 @@
   <body>
     <div class="container">
       <h1>Civic Alert Lite</h1>
-      <button id="alertBtn" class="btn">Report Alert</button>
+
+      <!-- Alert form -->
+      <form id="alertForm" class="alert-form">
+        <label for="alertMessage">Alert Message:</label>
+        <input type="text" id="alertMessage" required />
+
+        <label for="cityOrTown">City or Town:</label>
+        <input type="text" id="cityOrTown" required />
+
+        <label for="actionDept">Action Department (optional):</label>
+        <input
+          type="text"
+          id="actionDept"
+          placeholder="e.g., fire, police, etc."
+        />
+
+        <label for="intensity">Intensity (optional):</label>
+        <select id="intensity">
+          <option value="" disabled selected>Select intensity</option>
+          <option value="FYI">FYI</option>
+          <option value="Caution">Caution</option>
+          <option value="Urgent">Urgent</option>
+          <option value="Emergency">Emergency</option>
+        </select>
+
+        <label for="resources">Resources to Avail (optional):</label>
+        <input
+          type="text"
+          id="resources"
+          placeholder="e.g., first aid kit, car, etc."
+        />
+
+        <button type="submit" class="btn">Report Alert</button>
+      </form>
+
+      <!-- Display alert list -->
       <ul id="alertList"></ul>
+      <button id="loadMoreBtn" class="more-btn">More Alerts</button>
     </div>
 
     <!-- Register service worker -->

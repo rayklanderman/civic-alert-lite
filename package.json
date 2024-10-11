@@ -1,0 +1,15 @@
+{
+  "name": "social-justice-hackathon",
+  "version": "1.0.0",
+  "description": "![Civic Alert Lite Logo](https://i.ibb.co/pv9sZcB/civicalerts192-png.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.14.0"
+  }
+}
