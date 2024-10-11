@@ -1,4 +1,3 @@
-
 # Civic Alert Lite
 
 ![Civic Alert Lite Logo](https://i.ibb.co/pv9sZcB/civicalerts192-png.png)
@@ -23,6 +22,9 @@ The Civic Alert Lite app is already deployed and can be accessed at [https://civ
 - **Real-time Updates**: Instant notifications for reported incidents and alerts.
 - **Offline Access**: Functionality available even without an internet connection.
 - **Community Engagement**: Users can view and report alerts, fostering community participation.
+- **Upcoming Features**: 
+  - **SMS Alerts**: Receive critical updates via SMS.
+  - **USSD Query and Menu**: A USSD code will allow users to query alerts and submit updates through a simple text-based menu, enabling access without internet or smartphones.
 
 ## Technologies Used
 
